@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Payment Success</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+}
+
+.center {
+    text-align: center;
+    margin-top: 100px;
+}
+
+h1 {
+    color: #4caf50;
+}
+
+.link-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 10px;
+    transition: background-color 0.3s;
+}
+
+.link-button:hover {
+    background-color: #45a049;
+}
+
+.cheer-message {
+    font-size: 24px;
+    color: #4caf50;
+    margin-top: 30px;
+}
+</style>
+</head>
+<body>
+<div class="center">
+    <h1>Payment Successful!</h1>
+    <p class="cheer-message">Thank you for supporting Groove Galaxy Music! 🎉</p>
+    <a href="/map-view" class="link-button">View Songs</a>
+    <a href="/viewPlaylist" class="link-button">View Playlist</a>
+    <a href="/createplaylist" class="link-button">Create Playlist</a>
+</div>
+
+<script>
+window.onload = function() {
+    alert("Payment successful! Thank you for supporting Groove Galaxy Music!");
+};
+</script>
+
+</body>
+</html>

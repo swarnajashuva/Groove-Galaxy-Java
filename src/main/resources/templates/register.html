@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Registration Form</title>
+<style>
+  body {
+    background-color: #82787fd6;
+    font-family: Arial, sans-serif;
+    display: inherit;
+    padding: 33px;
+    margin: 13px;
+  }
+  form {
+    width: 320px;
+    padding: 20px;
+    margin: 50px auto;
+    background-color: #f5f7f7;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  h1 {
+    color: navy;
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+  label {
+    display: compact; 
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  .labelGen
+ {
+  margin: 12px -17px -2px -4px;
+   padding:0px;
+ }
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  textarea {
+   width: 100%;
+    padding: 8px;
+    margin-bottom: 26px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-style: italic;
+    font-family: cursive; /* Ensure that padding and border are included in the element's total width and height */
+  }
+  input[type="radio"] {
+    margin: 5px 10px -2px 25px;
+    padding: 21px 19px 28px;
+}
+  input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: navy;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  input[type="submit"]:hover {
+    background-color: #001f4d; /* Darker shade of navy */
+ }
+ input:hover {
+	background-color: #efeff4;
+}
+  
+ 
+</style>
+</head>
+<body>
+
+<div class="container">
+  <form action="/register" method="post">
+    <h1>Registration</h1>
+    <label for="username">User name:</label>
+    <input type="text" id="username" name="username" required>
+    
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+    
+    <label>Gender:</label><br/>
+    <input type="radio" id="male" name="gender" value="male"> <label for="male" class="labelGen">Male</label>
+    
+    <input type="radio" id="female" name="gender" value="female">  <label for="female" class="labelGen">Female</label>
+  
+   <input type="radio" id="other" name="gender" value="other"> <label for="other" class="labelGen">Other</label> 
+    <br/>
+    <label>Role:</label>
+    <br/>
+    <input type="radio" id="admin" name="role" value="admin">
+    <label for="admin">Admin</label>
+    
+    <input type="radio" id="customer" name="role" value="customer">
+    <label for="customer">Customer</label>
+    <br/>
+    <label for="address">Address:</label>
+    <textarea id="address" name="address" rows="4" cols="25"></textarea>
+    
+    <input type="submit" name="submit" value="REGISTER">
+  </form>
+</div>
+
+</body>
+</html>

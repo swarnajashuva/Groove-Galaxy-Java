@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Add Songs - Groove Galaxy Music</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #cadff1;
+    text-align: center;
+    padding-top: 100px;
+  }
+  form {
+    width: 400px;
+    margin: 0 auto;
+    padding: 40px;
+    border: 1px solid #fff;
+    background-color: #e3f9e3;
+    box-shadow: 0 0 10px rgba(0, 128, 0, 0.2);
+    border-radius: 5px;
+  }
+  h2 {
+    margin-bottom: 20px;
+    color: #333;
+  }
+  label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #333;
+    text-align: left;
+  }
+  input[type="text"] {
+    width: calc(100% - 10px);
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+  }
+  input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 16px;
+  }
+  input[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+  .info {
+    text-align: left;
+    margin-top: 30px;
+  }
+  .info i {
+    margin-right: 10px;
+  }
+</style>
+</head>
+<body>
+  <form action="/addsongs" method="post">
+    <h2>Add New Song</h2>
+    <label for="name">Song Name:</label>
+    <input type="text" id="name" name="name" required>
+    <label for="artist">Artist:</label>
+    <input type="text" id="artist" name="artist" required>
+    <label for="genre">Genre:</label>
+    <input type="text" id="genre" name="genre" required>
+    <label for="link">Song Link:</label>
+    <input type="text" id="link" name="link" required>
+    <input type="submit" name="addsongs" value="Add Song">
+    <div class="info">
+      <i class="fas fa-info-circle"></i> Make sure to provide a valid Song link for the song.
+    </div>
+  </form>
+</body>
+</html>

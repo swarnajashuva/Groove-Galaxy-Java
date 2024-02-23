@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>View Playlist</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+.card {
+   background-color: #fff;
+    border-radius: 7px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 23px;
+    padding: 31px 61px 32px 41px;
+    margin: 9px 71px 22px 63px;
+    background-image: url("");
+}
+
+.card h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.card li {
+    margin-bottom: 10px;
+}
+
+.audio-controls {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.audio-controls audio {
+    margin-right: 10px;
+}
+
+.toggle-button {
+    background-color: #555;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.toggle-button:hover {
+    background-color: #333;
+}
+</style>
+</head>
+<body>
+<div class="container">
+    <div th:each="pl:${plist}" class="card">
+        <h4 th:text="${pl.id}"></h4>
+        <h4 th:text="${pl.name}"></h4>
+        <ul>
+            <li th:each="s : ${pl.songs}">
+                <span th:text="${s.name}"></span>
+                <div class="audio-controls">
+                    <audio controls th:attr="src=${s.link}">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+            </li>
+        </ul>
+        <button class="toggle-button" onclick="toggleSongs(this)">Toggle Songs</button>
+    </div>
+</div>
+
+<script>
+function toggleSongs(button) {
+    var card = button.parentElement;
+    var ul = card.querySelector('ul');
+    ul.style.display = (ul.style.display === 'none') ? 'block' : 'none';
+}
+</script>
+</body>
+</html>

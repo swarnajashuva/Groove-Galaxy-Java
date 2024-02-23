@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Login - Groove Galaxy Music</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    text-align: center;
+  }
+  form {
+    width: 300px;
+    margin: 100px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  h2
+  {
+   margin-top:0;
+    color:#333;
+  }
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+     color: #555;
+  }
+  input[type="email"],
+  input[type="password"] {
+    width: calc(100% - 20px); /* Adjusted width to account for padding */
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+     font-size: 16px;
+  }
+  input[type="submit"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    box-sizing: border-box;
+  }
+  input[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+  .footer {
+    margin-top: 20px;
+    color: #777;
+  }
+  .footer a {
+    color: #007bff;
+    text-decoration: none;
+  }
+</style>
+</head>
+<body>
+  <form action="/login" method="post">
+    <h2>Login to Groove Galaxy </h2>
+    <label for="email">Email ID:</label>
+    <input type="email" id="email" name="email" required>
+    <br/><br/>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+    <br/><br/>
+    <input type="submit" value="LOGIN">
+  </form>
+   <div class="footer">
+    Don't have an account? <a href="/map-add">Sign up here</a>
+  </div>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Create Playlist - Groove Galaxy Music</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.form-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-card label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-card input[type="text"],
+.form-card input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.song-card {
+    background-color: #f9f9f9;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.song-card label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.song-card input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+.form-card input[type="submit"] {
+    background-color: #5555ff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.form-card input[type="submit"]:hover {
+    background-color: #3333cc;
+}
+</style>
+</head>
+<body>
+<form action="/addplaylist" method="post">
+    <div class="container">
+        <div class="form-card">
+            <h2>Create Playlist</h2>
+            <label>Playlist Name:</label>
+            <input type="text" name="name" required>
+            <div class="song-list">
+                <div class="song-card" th:each="s: ${songslist}">
+                    <input type="checkbox" name="song" th:value="${s.id}" />
+                    <label th:text="${s.name}"></label>
+                </div>
+            </div>
+            <input type="submit" value="ADD PLAYLIST" />
+        </div>
+    </div>
+    </form>
+</body>
+</html>
